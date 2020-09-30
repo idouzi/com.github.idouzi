@@ -9,7 +9,7 @@ import (
 )
 
 //域名常量
-const domain = "https://points-mall-test.henshihui.com"
+const domain = "https://points-mall.henshihui.com"
 
 type initTdb struct {
 	appKey    string
