@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"src/util"
+	"github.com/idouzi/tongduiba-open-sdk-go/util"
 )
 
 func main() {
