@@ -3,8 +3,10 @@ package util
 import (
 	"io/ioutil"
 	"net/http"
+	url2 "net/url"
 	"sort"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -52,6 +54,11 @@ func (tdb *initTdb) GetUrl(params map[string]string, method string) string {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
+		if strings.EqualFold(k,"redirect")&& len(allMap[k])>0{
+			escape := url2.QueryEscape(allMap[k])
+			url += k + "=" + escape + "&"
+			continue
+		}
 		url += k + "=" + allMap[k] + "&"
 	}
 	s := url[:len(url)-1]
